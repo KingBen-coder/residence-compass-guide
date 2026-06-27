@@ -10,7 +10,7 @@ export const Route = createFileRoute("/property/$id")({
   loader: ({ params }) => {
     const p = getProperty(params.id);
     if (!p) throw notFound();
-    return p;
+    return p as NonNullable<ReturnType<typeof getProperty>>;
   },
   head: ({ loaderData }) => ({
     meta: [
