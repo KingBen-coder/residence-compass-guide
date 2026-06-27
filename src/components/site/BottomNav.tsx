@@ -3,10 +3,10 @@ import { Home, Building2, Heart, CalendarCheck, Menu } from "lucide-react";
 
 const items = [
   { to: "/", label: "Home", icon: Home, exact: true },
-  { to: "/properties", label: "Residences", icon: Building2 },
-  { to: "/dashboard/favorites", label: "Saved", icon: Heart },
-  { to: "/book-visit", label: "Visit", icon: CalendarCheck },
-  { to: "/contact", label: "Contact", icon: Menu },
+  { to: "/properties", label: "Residences", icon: Building2, exact: false },
+  { to: "/dashboard/favorites", label: "Saved", icon: Heart, exact: false },
+  { to: "/book-visit", label: "Visit", icon: CalendarCheck, exact: false },
+  { to: "/contact", label: "Contact", icon: Menu, exact: false },
 ] as const;
 
 export function BottomNav() {
