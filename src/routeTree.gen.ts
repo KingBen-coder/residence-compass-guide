@@ -9,13 +9,85 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SignupRouteImport } from './routes/signup'
+import { Route as SigninRouteImport } from './routes/signin'
 import { Route as PropertiesRouteImport } from './routes/properties'
+import { Route as LocationRouteImport } from './routes/location'
+import { Route as InvestmentRouteImport } from './routes/investment'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as FaqsRouteImport } from './routes/faqs'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BrochureRouteImport } from './routes/brochure'
+import { Route as BookVisitRouteImport } from './routes/book-visit'
+import { Route as BlogRouteImport } from './routes/blog'
+import { Route as AmenitiesRouteImport } from './routes/amenities'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PropertyIdRouteImport } from './routes/property.$id'
 
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SigninRoute = SigninRouteImport.update({
+  id: '/signin',
+  path: '/signin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PropertiesRoute = PropertiesRouteImport.update({
   id: '/properties',
   path: '/properties',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationRoute = LocationRouteImport.update({
+  id: '/location',
+  path: '/location',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InvestmentRoute = InvestmentRouteImport.update({
+  id: '/investment',
+  path: '/investment',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqsRoute = FaqsRouteImport.update({
+  id: '/faqs',
+  path: '/faqs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BrochureRoute = BrochureRouteImport.update({
+  id: '/brochure',
+  path: '/brochure',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookVisitRoute = BookVisitRouteImport.update({
+  id: '/book-visit',
+  path: '/book-visit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AmenitiesRoute = AmenitiesRouteImport.update({
+  id: '/amenities',
+  path: '/amenities',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -31,41 +103,219 @@ const PropertyIdRoute = PropertyIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/amenities': typeof AmenitiesRoute
+  '/blog': typeof BlogRoute
+  '/book-visit': typeof BookVisitRoute
+  '/brochure': typeof BrochureRoute
+  '/contact': typeof ContactRoute
+  '/faqs': typeof FaqsRoute
+  '/gallery': typeof GalleryRoute
+  '/investment': typeof InvestmentRoute
+  '/location': typeof LocationRoute
   '/properties': typeof PropertiesRoute
+  '/signin': typeof SigninRoute
+  '/signup': typeof SignupRoute
   '/property/$id': typeof PropertyIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/amenities': typeof AmenitiesRoute
+  '/blog': typeof BlogRoute
+  '/book-visit': typeof BookVisitRoute
+  '/brochure': typeof BrochureRoute
+  '/contact': typeof ContactRoute
+  '/faqs': typeof FaqsRoute
+  '/gallery': typeof GalleryRoute
+  '/investment': typeof InvestmentRoute
+  '/location': typeof LocationRoute
   '/properties': typeof PropertiesRoute
+  '/signin': typeof SigninRoute
+  '/signup': typeof SignupRoute
   '/property/$id': typeof PropertyIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/amenities': typeof AmenitiesRoute
+  '/blog': typeof BlogRoute
+  '/book-visit': typeof BookVisitRoute
+  '/brochure': typeof BrochureRoute
+  '/contact': typeof ContactRoute
+  '/faqs': typeof FaqsRoute
+  '/gallery': typeof GalleryRoute
+  '/investment': typeof InvestmentRoute
+  '/location': typeof LocationRoute
   '/properties': typeof PropertiesRoute
+  '/signin': typeof SigninRoute
+  '/signup': typeof SignupRoute
   '/property/$id': typeof PropertyIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/properties' | '/property/$id'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/amenities'
+    | '/blog'
+    | '/book-visit'
+    | '/brochure'
+    | '/contact'
+    | '/faqs'
+    | '/gallery'
+    | '/investment'
+    | '/location'
+    | '/properties'
+    | '/signin'
+    | '/signup'
+    | '/property/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/properties' | '/property/$id'
-  id: '__root__' | '/' | '/properties' | '/property/$id'
+  to:
+    | '/'
+    | '/about'
+    | '/amenities'
+    | '/blog'
+    | '/book-visit'
+    | '/brochure'
+    | '/contact'
+    | '/faqs'
+    | '/gallery'
+    | '/investment'
+    | '/location'
+    | '/properties'
+    | '/signin'
+    | '/signup'
+    | '/property/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/amenities'
+    | '/blog'
+    | '/book-visit'
+    | '/brochure'
+    | '/contact'
+    | '/faqs'
+    | '/gallery'
+    | '/investment'
+    | '/location'
+    | '/properties'
+    | '/signin'
+    | '/signup'
+    | '/property/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AmenitiesRoute: typeof AmenitiesRoute
+  BlogRoute: typeof BlogRoute
+  BookVisitRoute: typeof BookVisitRoute
+  BrochureRoute: typeof BrochureRoute
+  ContactRoute: typeof ContactRoute
+  FaqsRoute: typeof FaqsRoute
+  GalleryRoute: typeof GalleryRoute
+  InvestmentRoute: typeof InvestmentRoute
+  LocationRoute: typeof LocationRoute
   PropertiesRoute: typeof PropertiesRoute
+  SigninRoute: typeof SigninRoute
+  SignupRoute: typeof SignupRoute
   PropertyIdRoute: typeof PropertyIdRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signin': {
+      id: '/signin'
+      path: '/signin'
+      fullPath: '/signin'
+      preLoaderRoute: typeof SigninRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/properties': {
       id: '/properties'
       path: '/properties'
       fullPath: '/properties'
       preLoaderRoute: typeof PropertiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/location': {
+      id: '/location'
+      path: '/location'
+      fullPath: '/location'
+      preLoaderRoute: typeof LocationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/investment': {
+      id: '/investment'
+      path: '/investment'
+      fullPath: '/investment'
+      preLoaderRoute: typeof InvestmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faqs': {
+      id: '/faqs'
+      path: '/faqs'
+      fullPath: '/faqs'
+      preLoaderRoute: typeof FaqsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/brochure': {
+      id: '/brochure'
+      path: '/brochure'
+      fullPath: '/brochure'
+      preLoaderRoute: typeof BrochureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book-visit': {
+      id: '/book-visit'
+      path: '/book-visit'
+      fullPath: '/book-visit'
+      preLoaderRoute: typeof BookVisitRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/amenities': {
+      id: '/amenities'
+      path: '/amenities'
+      fullPath: '/amenities'
+      preLoaderRoute: typeof AmenitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -87,7 +337,19 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AmenitiesRoute: AmenitiesRoute,
+  BlogRoute: BlogRoute,
+  BookVisitRoute: BookVisitRoute,
+  BrochureRoute: BrochureRoute,
+  ContactRoute: ContactRoute,
+  FaqsRoute: FaqsRoute,
+  GalleryRoute: GalleryRoute,
+  InvestmentRoute: InvestmentRoute,
+  LocationRoute: LocationRoute,
   PropertiesRoute: PropertiesRoute,
+  SigninRoute: SigninRoute,
+  SignupRoute: SignupRoute,
   PropertyIdRoute: PropertyIdRoute,
 }
 export const routeTree = rootRouteImport
