@@ -50,7 +50,7 @@ function PropertyPage() {
             <span className="absolute top-4 left-4 rounded-full bg-background/90 px-3 py-1 text-[11px] uppercase tracking-widest font-medium">{p.status}</span>
           </div>
           <div className="grid grid-cols-3 lg:grid-cols-2 gap-3">
-            {p.gallery.map((src, i) => (
+            {p.gallery.map((src: string, i: number) => (
               <button
                 key={src + i}
                 onClick={() => setActive(i)}
@@ -88,7 +88,7 @@ function PropertyPage() {
             <div className="mt-10">
               <h2 className="font-display text-2xl">Highlights</h2>
               <ul className="mt-4 grid sm:grid-cols-2 gap-3">
-                {p.highlights.map((h) => (
+                {p.highlights.map((h: string) => (
                   <li key={h} className="flex items-start gap-2 text-sm">
                     <Check className="size-4 text-primary mt-0.5" /> {h}
                   </li>
