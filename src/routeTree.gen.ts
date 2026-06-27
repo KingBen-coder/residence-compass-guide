@@ -16,6 +16,7 @@ import { Route as LocationRouteImport } from './routes/location'
 import { Route as InvestmentRouteImport } from './routes/investment'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as FaqsRouteImport } from './routes/faqs'
+import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BrochureRouteImport } from './routes/brochure'
 import { Route as BookVisitRouteImport } from './routes/book-visit'
@@ -58,6 +59,11 @@ const GalleryRoute = GalleryRouteImport.update({
 const FaqsRoute = FaqsRouteImport.update({
   id: '/faqs',
   path: '/faqs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -109,6 +115,7 @@ export interface FileRoutesByFullPath {
   '/book-visit': typeof BookVisitRoute
   '/brochure': typeof BrochureRoute
   '/contact': typeof ContactRoute
+  '/dashboard': typeof DashboardRoute
   '/faqs': typeof FaqsRoute
   '/gallery': typeof GalleryRoute
   '/investment': typeof InvestmentRoute
@@ -126,6 +133,7 @@ export interface FileRoutesByTo {
   '/book-visit': typeof BookVisitRoute
   '/brochure': typeof BrochureRoute
   '/contact': typeof ContactRoute
+  '/dashboard': typeof DashboardRoute
   '/faqs': typeof FaqsRoute
   '/gallery': typeof GalleryRoute
   '/investment': typeof InvestmentRoute
@@ -144,6 +152,7 @@ export interface FileRoutesById {
   '/book-visit': typeof BookVisitRoute
   '/brochure': typeof BrochureRoute
   '/contact': typeof ContactRoute
+  '/dashboard': typeof DashboardRoute
   '/faqs': typeof FaqsRoute
   '/gallery': typeof GalleryRoute
   '/investment': typeof InvestmentRoute
@@ -163,6 +172,7 @@ export interface FileRouteTypes {
     | '/book-visit'
     | '/brochure'
     | '/contact'
+    | '/dashboard'
     | '/faqs'
     | '/gallery'
     | '/investment'
@@ -180,6 +190,7 @@ export interface FileRouteTypes {
     | '/book-visit'
     | '/brochure'
     | '/contact'
+    | '/dashboard'
     | '/faqs'
     | '/gallery'
     | '/investment'
@@ -197,6 +208,7 @@ export interface FileRouteTypes {
     | '/book-visit'
     | '/brochure'
     | '/contact'
+    | '/dashboard'
     | '/faqs'
     | '/gallery'
     | '/investment'
@@ -215,6 +227,7 @@ export interface RootRouteChildren {
   BookVisitRoute: typeof BookVisitRoute
   BrochureRoute: typeof BrochureRoute
   ContactRoute: typeof ContactRoute
+  DashboardRoute: typeof DashboardRoute
   FaqsRoute: typeof FaqsRoute
   GalleryRoute: typeof GalleryRoute
   InvestmentRoute: typeof InvestmentRoute
@@ -274,6 +287,13 @@ declare module '@tanstack/react-router' {
       path: '/faqs'
       fullPath: '/faqs'
       preLoaderRoute: typeof FaqsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -343,6 +363,7 @@ const rootRouteChildren: RootRouteChildren = {
   BookVisitRoute: BookVisitRoute,
   BrochureRoute: BrochureRoute,
   ContactRoute: ContactRoute,
+  DashboardRoute: DashboardRoute,
   FaqsRoute: FaqsRoute,
   GalleryRoute: GalleryRoute,
   InvestmentRoute: InvestmentRoute,
